@@ -624,7 +624,11 @@ section{
 }
 
 .contact-buttons button:first-child:hover {
-    background-color: #0ea5e9;
+    background-color: #086a98;
+}
+
+.contact-buttons button:active {
+    transform: scale(0.95);
 }
 
 /* Download Resume Button */
@@ -635,8 +639,12 @@ section{
 }
 
 .contact-buttons a button:hover {
-    background-color: #38bdf8;
+    background-color: #1379a5;
     color: #0f172a;
+}
+
+.contact-buttons button:active {
+    transform: scale(0.95);
 }
 
 /* FOOTER */
