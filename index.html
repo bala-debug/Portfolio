@@ -514,32 +514,29 @@ window.addEventListener("scroll", function () {
     });
 });
 
-if (window.innerWidth <= 768) {
+const cards = document.querySelectorAll(".project-card");
 
-    const cards = document.querySelectorAll(".project-card");
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add("show");
-                }, index * 200);
-            }
-        });
-    }, {
-        threshold: 0.2
+        if (entry.isIntersecting) {
+
+            setTimeout(() => {
+                entry.target.classList.add("show");
+            }, index * 200);
+
+            observer.unobserve(entry.target); // Animate only once
+        }
+
     });
 
-    cards.forEach(card => {
-        observer.observe(card);
-    });
+}, {
+    threshold: 0.2
+});
 
-} else {
-    // On desktop show all immediately
-    document.querySelectorAll(".project-card").forEach(card => {
-                card.classList.add("show");
-    });
-}
+cards.forEach(card => {
+    observer.observe(card);
+});
 
 </script>
 
