@@ -677,26 +677,10 @@ section {
     }
 }
 
-#home {
-    background-color: #0f172a;
-}
-
-#about {
-    background-color: #1e293b;
-}
-
-#skills {
-    background-color: #0f172a;
-}
-
-#projects {
-    background-color: #1e293b;
-}
-
-#certifications {
-    background-color: #0f172a;   /* Changed */
-}
-
-#contact {
-    background-color: #1e293b;
-}
+#home { background-color: #0f172a; }
+#about { background-color: #1e293b; }
+#skills { background-color: #0f172a; }
+#projects { background-color: #1e293b; }
+#education { background-color: #0f172a; }
+#certifications { background-color: #1e293b; }
+#contact { background-color: #0f172a; }

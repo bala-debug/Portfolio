@@ -514,6 +514,33 @@ window.addEventListener("scroll", function () {
     });
 });
 
+if (window.innerWidth <= 768) {
+
+    const cards = document.querySelectorAll(".project-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("show");
+                }, index * 200);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+
+} else {
+    // On desktop show all immediately
+    document.querySelectorAll(".project-card").forEach(card => {
+                card.classList.add("show");
+    });
+}
+
 </script>
 
 </body>
