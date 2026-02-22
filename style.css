@@ -372,6 +372,23 @@ section{
     transform: translateY(0);
 }
 
+/*  MOBILE PROJECT FIX  */
+
+@media (max-width: 768px) {
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+}
+
 /* EDUCATION */
 .edu-card{
     background:#1e293b;
@@ -412,9 +429,9 @@ section{
     font-size:16px;
 }
 
-/* ===================== */
+
 /* CERTIFICATIONS */
-/* ===================== */
+
 
 #certifications {
     padding: 80px 8%;
@@ -543,7 +560,7 @@ section{
     color:#0f172a;
 }
 
-/* ================= CONTACT RIGHT CARD ================= */
+/*  CONTACT RIGHT CARD  */
 
 .contact-card {
     background: #0f172a;
