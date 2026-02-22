@@ -10,9 +10,9 @@
 
 <body>
 
-<nav>
+<nav class="navbar">
     <h2>Balaji S</h2>
-    <ul>
+    <ul class="nav-links">
         <li><a href="#home">Home</a></li>
          <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -21,6 +21,9 @@
          <li><a href="#certifications">Certification</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="hamburger">
+        ☰
+    </div>
 </nav>
 
 <section id="home">
@@ -477,10 +480,40 @@ encourage stronger and more secure password creation.
 </footer>
 
 <script>
+
+/* COPY EMAIL */
 function copyEmail(){
     navigator.clipboard.writeText("balajisaravanan486@gmail.com");
     alert("Email copied to clipboard!");
 }
+
+/* HAMBURGER MENU */
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+});
+
+/* PROJECT SCROLL ANIMATION */
+
+const projectCards = document.querySelectorAll(".project-card");
+
+window.addEventListener("scroll", function () {
+    projectCards.forEach(function(card, index) {
+
+        const cardTop = card.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (cardTop < windowHeight - 100) {
+            setTimeout(function() {
+                card.classList.add("show");
+            }, index * 200); // delay one by one
+        }
+
+    });
+});
+
 </script>
 
 </body>

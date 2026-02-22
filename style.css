@@ -59,8 +59,36 @@ section{
     padding:120px 12%;
 }
 
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #1e293b;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
 /* HOME */
-/* ================= HERO SECTION ================= */
 
 #home {
     min-height: 100vh;
@@ -177,9 +205,6 @@ section{
 }
 
 /* SKILLS */
-/* ===================== */
-/* SKILLS SECTION */
-/* ===================== */
 
 #skills {
     padding: 80px 8%;
@@ -332,6 +357,19 @@ section{
 .project-card:hover{
     transform:translateY(-10px);
     box-shadow:0 20px 40px rgba(56,189,248,0.25);
+}
+
+/*  PROJECT SCROLL ANIMATION  */
+
+.project-card {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* EDUCATION */
